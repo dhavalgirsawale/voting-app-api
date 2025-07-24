@@ -48,5 +48,24 @@ public class AuthController {
         boolean hasVoted = votingService.hasUserVotedInSession(userId, sessionId);
         return ResponseEntity.ok(hasVoted);
     }
+
+    @PostMapping("/register")
+    public ResponseEntity<String> registerUser( // Return type ResponseEntity<String> for plain message
+            @RequestParam String userId,
+            @RequestParam String password) {
+        try {
+            User newUser = new User();
+            newUser.setUserId(userId);
+            newUser.setPassword(password); // Password will be encoded by authService.registerUser
+            newUser.setAdmin(false);       // Registering as a regular user
+            newUser.setCanVote(true);      // Grant voting access by default
+
+            authService.registerUser(newUser);
+            return ResponseEntity.ok("User registered successfully"); // Consistent with other plain text returns
+        } catch (Exception e) {
+            // You might want more specific error handling here
+            return ResponseEntity.badRequest().body("User registration failed: " + e.getMessage());
+        }
+    }
   
 }
