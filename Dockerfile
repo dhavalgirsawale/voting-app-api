@@ -1,16 +1,17 @@
 FROM eclipse-temurin:17-jdk AS builder
 WORKDIR /app
 
-# First copy only wrapper files
+# 1. First copy only build files
 COPY .mvn/ .mvn
 COPY mvnw pom.xml ./
 
-# Set permissions and download dependencies
-RUN chmod +x mvnw && ./mvnw dependency:go-offline
+# 2. Set permissions (MUST be done before running)
+RUN chmod +x mvnw && \
+    ./mvnw dependency:go-offline
 
-# Copy remaining files and build
+# 3. Copy source and build
 COPY src ./src
-RUN ./mvnw package -DskipTests
+RUN ./mvnw clean package -DskipTests
 
 FROM eclipse-temurin:17-jre
 WORKDIR /app
