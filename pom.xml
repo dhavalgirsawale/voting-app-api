@@ -75,11 +75,7 @@
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-thymeleaf</artifactId>
 </dependency>
-    <dependency>
-    	<groupId>com.example.hibernat</groupId>
-    	<artifactId>Jpa</artifactId>
-    	<version>0.0.1-SNAPSHOT</version>
-    </dependency>
+    
 	</dependencies>
 
 	<build>
