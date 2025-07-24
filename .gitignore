@@ -1,0 +1,142 @@
+# Maven
+/target/
+pom.xml.tag
+pom.xml.bak
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+release-plugins/
+dependency-reduced-pom.xml
+build/
+.mvn/wrapper/maven-wrapper.jar # If you use Maven Wrapper
+
+# Gradle (if you use Gradle instead of Maven)
+.gradle/
+/build/
+.gradle-tooling/
+gradle-wrapper.jar
+!gradle/wrapper/gradle-wrapper.jar
+.gradle-tooling.log
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+.gradle/
+
+# Eclipse
+.project
+.classpath
+.settings/
+.buildpath
+bin/
+
+# VS Code
+.vscode/
+
+# OS-specific files
+.DS_Store
+.Trashes
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Class files
+*.class
+
+# Log files
+*.log
+logs/
+
+# Package files
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# Compiled output
+/bin/
+
+# Application-specific generated files
+### Spring Boot ###
+/target/
+!*.jar
+!*.war
+!*.ear
+!/src/main/resources/**/!*.jar # Keep resources that get bundled, exclude generated jars in resources
+!/src/main/resources/**/!*.war
+!/src/main/resources/**/!*.ear
+# For spring-boot-devtools
+.devtools/
+# For Spring Actuator
+/actuator/
+# If you use Lombok for generated builders, etc.
+/build/
+# If your application creates temporary files
+/tmp/
+
+### Database ###
+# Database files (if you have local H2/SQLite files, etc.)
+*.mv.db
+*.trace.db
+/data/
+
+# Environment-specific configuration (should not be committed to Git)
+# If you have application-dev.properties, application-prod.properties, etc.
+# and they contain sensitive info, you might list them here.
+# It's better to manage sensitive config through environment variables or separate mechanisms.
+# For example:
+# application-*.properties
+# application.properties # If it contains local/sensitive data
+# application.yml      # If it contains local/sensitive data
+
+# IDE-specific (more exhaustive)
+*.swp
+*~
+.cache/
+.idea_modules/
+.classpath
+.project
+.externalToolBuilders/
+.gradle/
+.settings/
+.out/
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.launch
+.cxx/
+*.cxx
+*.in
+*.suo
+*.user
+*.userosscfg
+*.scc
+*.vspscc
+*.vssscc
+*.bak
+*.pyc
+*.class
+*.jar
+*.war
+*.ear
+*.zip
+*.rar
+*.7z
+*.gz
+*.log
+*.temp
+*.tmp
+*.iml
+*.ipr
+*.iws
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
