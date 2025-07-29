@@ -40,7 +40,6 @@ public class AuthController {
         return ResponseEntity.badRequest().body("Invalid admin credentials");
     }
     
- // New endpoint to check if user has voted in specific session
     @GetMapping("/check-voted/{sessionId}")
     public ResponseEntity<?> hasUserVotedInSession(
             @RequestParam String userId,
@@ -50,18 +49,18 @@ public class AuthController {
     }
 
     @PostMapping("/register")
-    public ResponseEntity<String> registerUser( // Return type ResponseEntity<String> for plain message
+    public ResponseEntity<String> registerUser( 
             @RequestParam String userId,
             @RequestParam String password) {
         try {
             User newUser = new User();
             newUser.setUserId(userId);
-            newUser.setPassword(password); // Password will be encoded by authService.registerUser
-            newUser.setAdmin(false);       // Registering as a regular user
-            newUser.setCanVote(true);      // Grant voting access by default
+            newUser.setPassword(password); 
+            newUser.setAdmin(false);       
+            newUser.setCanVote(true);      
 
             authService.registerUser(newUser);
-            return ResponseEntity.ok("User registered successfully"); // Consistent with other plain text returns
+            return ResponseEntity.ok("User registered successfully"); 
         } catch (Exception e) {
             // You might want more specific error handling here
             return ResponseEntity.badRequest().body("User registration failed: " + e.getMessage());
