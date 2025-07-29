@@ -18,10 +18,10 @@ public class VotingSession {
     private boolean isActive = true;
     
     @OneToMany(mappedBy = "session", cascade = CascadeType.ALL)
-    @JsonIgnore // Add this to break the cycle
+    @JsonIgnore 
     private List<VoteOption> options;
     
     @OneToMany(mappedBy = "session", cascade = CascadeType.ALL)
-    @JsonIgnore // Add this to break the cycle
+    @JsonIgnore 
     private List<Vote> votes;
 }
